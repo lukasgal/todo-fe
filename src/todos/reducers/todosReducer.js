@@ -30,6 +30,7 @@ function deleteTodoSuccess(state, action) {
 
 const todoReducer = createReducer(new OrderedMap(), {
   [ATypes.FETCH_ALL.SUCCESS]: fetchAllSuccess,
+  [ATypes.FETCH_COMPLETED.SUCCESS]: fetchAllSuccess,
   [ATypes.ADD.SUCCESS]: addTodoSuccess,
   [ATypes.COMPLETE_STATE.SUCCESS]: completeStateSuccess,
   [ATypes.UPDATE.SUCCESS]: updateTodoSuccess,

@@ -32,6 +32,7 @@ class TodoItem extends Component {
   }
 
   onSave(payload) {
+    if (this.props.todo.get('text') === payload.text) return;
     this.props.onSave(
       Object.assign(payload, { id: this.props.todo.get('id') }),
     );
@@ -65,7 +66,12 @@ class TodoItem extends Component {
     return (
       <div className="view">
         {this.renderCheckbox(completed)}
-        <label onDoubleClick={this.handleDoubleClick}>{text}</label>
+        <label
+          onDoubleClick={this.handleDoubleClick}
+          title="Double-click to edit a todo"
+        >
+          {text}
+        </label>
         <button className="destroy" onClick={this.handleDelete} />
       </div>
     );

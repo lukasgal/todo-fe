@@ -2,6 +2,7 @@ import axios from './../axiosConfig';
 
 const ApiURIs = {
   TODOS: 'todos',
+  TODOS_COMPLETED: 'todos/completed',
   TODO_ITEM: 'todos/:id',
   TODO_ITEM_COMPLETE: 'todos/:id/complete',
   TODO_ITEM_INCOMPLETE: 'todos/:id/incomplete',
@@ -34,6 +35,9 @@ async function callApi(url, method, data) {
 }
 
 export const fetchTodos = () => callApi(ApiURIs.TODOS, HTTP_METHOD.GET);
+
+export const fetchCompletedTodos = () =>
+  callApi(ApiURIs.TODOS_COMPLETED, HTTP_METHOD.GET);
 
 export const deleteTodo = id =>
   callApi(ApiURIs.TODO_ITEM.replace(':id', id), HTTP_METHOD.DELETE);

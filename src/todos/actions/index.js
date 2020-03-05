@@ -13,6 +13,12 @@ export const fetchAllAsync = {
   failure: payload => action(ATypes.FETCH_ALL[ATypes.FAILURE], payload),
 };
 
+export const fetchCompletedAsync = {
+  request: payload => action(ATypes.FETCH_COMPLETED[ATypes.REQUEST], payload),
+  success: payload => action(ATypes.FETCH_COMPLETED[ATypes.SUCCESS], payload),
+  failure: payload => action(ATypes.FETCH_COMPLETED[ATypes.FAILURE], payload),
+};
+
 export const deleteTodoAsync = {
   request: payload => action(ATypes.DELETE[ATypes.REQUEST], payload),
   success: payload => action(ATypes.DELETE[ATypes.SUCCESS], payload),

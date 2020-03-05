@@ -30,7 +30,7 @@ function* completeAllTodos() {
       completed++;
     }
     //@TO-DO resolve state if all tasks are not finished successfully - undo etc.
-    yield put(completeAllAsync.success({}));
+    yield put(completeAllAsync.success({ count: completed }));
   } catch (e) {
     yield put(completeAllAsync.failure({ message: e.message }));
   } finally {

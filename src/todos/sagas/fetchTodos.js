@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from 'redux-saga/effects';
+import { put, call, takeLatest } from 'redux-saga/effects';
 import { fetchAllAsync, startLoading, stopLoading } from '../actions';
 import * as api from './../api';
 import * as actionTypes from './../actions/actionTypes';
@@ -15,5 +15,5 @@ function* fetchTodos() {
   }
 }
 export function* watchFetchTodos() {
-  yield takeEvery(actionTypes.FETCH_ALL.REQUEST, fetchTodos);
+  yield takeLatest(actionTypes.FETCH_ALL.REQUEST, fetchTodos);
 }

@@ -2,7 +2,7 @@ import { Record } from 'immutable';
 import * as ATypes from './../actions/actionTypes';
 import { createReducer } from '@reduxjs/toolkit';
 
-export const NOTIFICATION_TYPES = {  
+export const NOTIFICATION_TYPES = {
   ERROR: 'error',
   SUCCESS: 'success',
   PROGRESS: 'progress',
@@ -65,13 +65,17 @@ function addSuccess(state, action) {
 }
 
 function completingAllSuccess(state, action) {
+  const { count } = action.payload;
   return setSuccess(state, {
-    message: 'All visible todos has been completed.',
+    message: 'All (' + count + ') visible todos has been completed.',
   });
 }
 
 function deletingAllSuccess(state, action) {
-  return setSuccess(state, { message: 'All completed todos has been deleted' });
+  const { count } = action.payload;
+  return setSuccess(state, {
+    message: 'All (' + count + ') completed todos has been deleted',
+  });
 }
 
 function showError(state, action) {

@@ -7,6 +7,8 @@ import { watchCompleteAll } from './completeAllTodos';
 import { watchUpdateTodo } from './updateTodo';
 import { watchToggleCompleted } from './completeTodo';
 import { watchDeleteTodo } from './deleteTodo';
+import { watchFetchCompletedTodos } from './fetchCompleted';
+import { watchSetFilter } from './setFilter'
 
 function* startup() {
   yield put(fetchAllAsync.request({}));
@@ -21,6 +23,8 @@ export default function* todoRootSaga() {
     fork(watchFetchTodos),
     fork(watchUpdateTodo),
     fork(watchClearCompleted),
+    fork(watchFetchCompletedTodos),
+    fork(watchSetFilter), /*@TODO method should be optimized now it's not used */
     fork(startup),
   ];
 }

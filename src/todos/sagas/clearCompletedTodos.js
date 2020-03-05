@@ -29,7 +29,7 @@ function* clearCompletedTodos() {
       completed++;
     }
     //@TO-DO resolve state if all tasks are not finished successfully - undo etc.
-    yield put(deleteCompletedAsync.success({}));
+    yield put(deleteCompletedAsync.success({ count: completed }));
   } catch (e) {
     yield put(deleteCompletedAsync.failure({ message: e.message }));
   } finally {

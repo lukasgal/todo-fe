@@ -4,9 +4,11 @@ import { createReducer } from '@reduxjs/toolkit';
 import { updateItemInMap } from '../../immutableHelpers';
 
 function initFromFetch(state, action) {
-  return action.payload.reduce((acc, el) => {
-    return acc.set(el['id'], new TodoMeta());
-  }, new Map({}));
+  return state.merge(
+    action.payload.reduce((acc, el) => {
+      return acc.set(el['id'], new TodoMeta());
+    }, new Map({})),
+  );
 }
 
 function addMetaItem(state, action) {
@@ -31,6 +33,7 @@ function deleteMetaItem(state, action) {
 
 const todosMetaReducer = createReducer(new Map(), {
   [ATypes.FETCH_ALL.SUCCESS]: initFromFetch,
+  [ATypes.FETCH_COMPLETED.SUCCESS]: initFromFetch,
   [ATypes.ADD.SUCCESS]: addMetaItem,
   [ATypes.DELETE.SUCCESS]: deleteMetaItem,
   [ATypes.START_LOADING]: startLoading,

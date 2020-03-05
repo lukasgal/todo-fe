@@ -14,6 +14,7 @@ export const UPDATE = createReqTypes('todos/updateTodo');
 export const COMPLETE_STATE = createReqTypes('todos/setCompletedState');
 export const COMPLETE_ALL = createReqTypes('todos/setVisibleCompleted');
 export const DELETE_COMPLETED = createReqTypes('todos/deleteCompleted');
+export const FETCH_COMPLETED = createReqTypes('todos/fetchCompleted');
 export const FETCH_ALL = createReqTypes('todos/getAllTodos');
 export const SET_FILTER = 'todos/setFilter';
 export const START_LOADING = 'todos/notifyStartLoading';
