@@ -12,5 +12,6 @@ Runs the app in the development mode.<br />
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-##  Demo
-You can see an working demo here:<br />[http://lukasgal.wz.cz/todo](http://lukasgal.wz.cz/todo)
+##  Server API
+The API is available [here](https://github.com/morosystems/todo-be)
+
