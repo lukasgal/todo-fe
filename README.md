@@ -1,5 +1,5 @@
 ## React todos
-This application is inspired with http://todomvc.com/examples/vanillajs/.  It demonstrate using of thechnologies like 
+This application is inspired with http://todomvc.com/examples/vanillajs/.  It demonstrate using of technologies like 
 [React](https://reactjs.org/), [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/), (Immutablejs) [https://immutable-js.github.io/immutable-js/], [Reselect](https://github.com/reduxjs/reselect).
 
 Run following commands: 
