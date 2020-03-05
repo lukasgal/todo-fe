@@ -375,7 +375,7 @@ html .clear-completed:active {
 .todo-notification {
   position: fixed;
   left: 50%;
-  bottom: 20px;
+  top: 20px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   border-radius: 5px;
