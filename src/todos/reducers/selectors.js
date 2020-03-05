@@ -33,7 +33,7 @@ export const getVisibleTodos = createSelector(
       default:
         res = todos;
     }
-    return res.sortBy(t => t.get('createdDate'));
+    return res;
   },
 );
 
