@@ -1,9 +1,8 @@
-import { put, takeLatest, select } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import { fetchAllAsync, fetchCompletedAsync } from '../actions';
 
 import * as actionTypes from '../actions/actionTypes';
 import { TODO_FILTER_TYPES } from './../constants';
-import { getFilter } from '../reducers/selectors';
 
 function* setFilter({ payload }) {
   switch (payload) {
@@ -13,6 +12,7 @@ function* setFilter({ payload }) {
     case TODO_FILTER_TYPES.SHOW_COMPLETED:
       yield put(fetchCompletedAsync.request());
       break;
+    default:
   }
 }
 
