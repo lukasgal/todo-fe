@@ -25,7 +25,7 @@ export default function* todoRootSaga() {
     fork(watchUpdateTodo),
     fork(watchClearCompleted),
     fork(watchFetchCompletedTodos),
-    fork(watchSetFilter), /*@TODO method should be optimized now it's not used */
+    fork(watchSetFilter),
     fork(watchShowNotification),
     fork(startup),
   ];
