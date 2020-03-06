@@ -1,17 +1,11 @@
 import React from 'react';
 import './App.css';
-import Todos from './todos/containers/Todos';
-import Header from './todos/containers/Header';
-import Notifications from './todos/containers/Notifications';
-import Footer from './todos/containers/Footer';
+import PageContainer from './todos/PageContainer';
 
 function App() {
   return (
     <div className="todoapp">
-      <Notifications />
-      <Header />
-      <Todos />
-      <Footer />
+      <PageContainer />
     </div>
   );
 }
