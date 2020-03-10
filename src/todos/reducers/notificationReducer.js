@@ -78,6 +78,10 @@ function deletingAllSuccess(state, action) {
   });
 }
 
+function completingAllFailure(state, action) {
+  return setError(state, action.payload);
+}
+
 function showError(state, action) {
   return setError(state, action.payload);
 }
@@ -99,6 +103,7 @@ export const notificationReducer = createReducer(
     [ATypes.FETCH_ALL.FAILURE]: showError,
     [ATypes.UPDATE.FAILURE]: showError,
     [ATypes.ADD.FAILURE]: showError,
+    [ATypes.COMPLETE_ALL.FAILURE]: completingAllFailure,
   },
 );
 

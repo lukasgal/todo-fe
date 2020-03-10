@@ -13,8 +13,9 @@ function* completeAllTodos() {
     yield put(startLoading());
     const todos = yield select(getIncompleteVisibleTodos);
     if (todos.size === 0) {
+      debugger;
       return yield put(
-        completeAllAsync.success({ message: 'No tasks to complete' }),
+        completeAllAsync.failure({ message: 'No tasks to complete' }),
       );
     }
     //handle complete task same way as in case of completing of one task
